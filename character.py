@@ -1,19 +1,19 @@
 import random
 
-class Character:
-    def __init__(self, playerName, characterName, alignment, exp):
-        self.playerName = playerName
-        self.characterName = characterName
+class Character(Class):
+    def __init__(self, name, race, gender, background, alignment, str, dex, con, intel, wis, char)
+        self.name = name
+        self.race = race
+        self.gender = gender
+        self.background = background
         self.alignment = alignment
-        self.exp = exp
-        self.hitPoints = 10
-        self.armorClass = 0
-        self.strength = 0
-        self.dexterity = 0
-        self.constitution = 0
-        self.intelligence = 0
-        self.wisodm = 0
-        self.charisma = 0
+        self.exp = 0
+        self.str = 0
+        self.dex = 0
+        self.con = 0
+        self.intel = 0
+        self.wis = 0
+        self.char = 0
 
     # Need a method to update attributes dynamically
     def updateAttr(self, stat, value):
@@ -41,7 +41,11 @@ myCharacter.updateAttr("dexterity", 10)
     # Background
     # Alignment
     # Personal Characteristics
-#
+    # Height and Weight?
+# Choose Equipment
+    # Armor Class
+    # Weapons
+# 
 #
 #
 #

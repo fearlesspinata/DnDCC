@@ -1,5 +1,5 @@
-import random
+import character
 
-
-
-roll(4, 6)
+race = ['Dwarf', 'Elf', 'Halfling', 'Human']
+charClass = ['Bard', 'Cleric', 'Fighter', 'Rogue', 'Wizard']
+background = ['Acolyte', 'Criminal', 'Entertainer', 'Soldier']
