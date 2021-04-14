@@ -1,25 +1,23 @@
 #import character
+from charOptions import race
+from charOptions import raceList
+from charOptions import charClass
+from charOptions import background
 
-race = ['Dwarf', 'Elf', 'Halfling', 'Human']
-charClass = ['Bard', 'Cleric', 'Fighter', 'Rogue', 'Wizard']
-background = ['Acolyte', 'Criminal', 'Entertainer', 'Soldier']
+def main():
+    print("Welcome to the DnD Character Creator! This project is still in development  but any feedback is appreciated.")
+    
+    name = input("Let's start with your character's name: ")
+    enumeratedList = enumerate(raceList, 1)
+    for count, r in enumeratedList:
+        print(count, r)
 
-print("Welcome to the DnD Character Creator! This project is still in development  but any feedback is appreciated.")
-name = input("Let's start with your character's name: ")
-print(f'What race will {name} be?')
-enumeratedRace = enumerate(race, 1)
-for count, r in enumeratedRace:
-    print(count, r)
+    choiceRace = input(f'What race will {name} be?: ')
+    choiceRace = race[choiceRace]
 
-choiceRace = input()
+    print(f'So far {name} is a {choiceRace}. Is this correct?: ')
 
-if choiceRace == '1':
-    choiceRace = "Dwarf"
-if choiceRace == '2':
-    choiceRace = "Elf"
-if choiceRace == '3':
-    choiceRace = "Halfling"
-if choiceRace == '4':
-    choiceRace = "Human"
 
-print(f'So {name} will be a {choiceRace}?')
+
+
+main()
