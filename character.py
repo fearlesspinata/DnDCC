@@ -1,7 +1,7 @@
 import random
 
 class Character(Class):
-    def __init__(self, name, race, gender, background, alignment, str, dex, con, intel, wis, char)
+    def __init__(self, name, race, gender, background, alignment, str, dex, con, intel, wis, char):
         self.name = name
         self.race = race
         self.gender = gender
