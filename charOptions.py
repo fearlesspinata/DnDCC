@@ -4,3 +4,6 @@ charClassList = ['Bard', 'Cleric', 'Fighter', 'Rogue', 'Wizard']
 charClass = {'1': 'Bard', '2': 'Cleric', '3': 'Fighter', '4': 'Rogue', '5': 'Wizard'}
 backgroundList = ['Acolyte', 'Criminal', 'Entertainer', 'Soldier']
 background = {'1': 'Acolyte', '2': 'Criminal', '3': 'Entertainer', '4': 'Soldier'}
+alignmentList = ['lawful good', 'chaotic good', 'neutral good', 'neutral', 'chaotic neutral', 'lawful evil', 'chaotic evil', 'neutral evil']
+alignment = {'1': 'lawful good', '2': 'chaotic good', '3': 'neutral good', '4': 'neutral', '5': 'chaotic neutral', '6': 'lawful evil', '7': 'chaotic evil', '8': 'neutral evil'}
+statList = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']
