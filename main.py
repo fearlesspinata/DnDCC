@@ -17,48 +17,33 @@ def statRoll (dieNumber, dieSize):
             rolls.append(i)
         rolls.sort()
         return sum(rolls[len(rolls) - 1:0:-1])
-def checkAbility(choiceAbility, value):
-    if choiceAbility.lower() == "strength":
-        strength = value
-        return strength
-    elif choiceAbility.lower() == "dexterity":
-        dexterity = value
-        return dexterity
-    elif choiceAbility.lower() == "constitution":
-        constitution = value
-        return constitution
-    elif choiceAbility.lower() == "intelligence":
-        intelligence = value
-        return intelligence
-    elif choiceAbility.lower() == "wisdom":
-        wisdom = value
-        return wisodm
-    elif choiceAbility.lower() == "charisma":
-        charisma = value
-        return charisma
     
 
 def main():
     print("Welcome to the DnD Character Creator! This project is still in development  but any feedback is appreciated.")
     
     name = input("Let's start with your character's name: ")
-    choiceGender = print(f'What gender will {name} be?: ')
+    choiceGender = input(f'What gender will {name} be?: ')
     
     enumeratedRaceList = enumerate(raceList, 1)
     enumeratedBackgroundList = enumerate(backgroundList, 1)
     enumeratedAlignmentList = enumerate(alignmentList, 1)
+    statChoices = {'str': 0, 'dex': 0, 'int': 0, 'wis': 0, 'cha': 0}
     
     for count, r in enumeratedRaceList:
         print(count, r)
     choiceRace = input(f'What race will {name} be?: ')
+    choiceRace = raceList[int(choiceRace) -1]
 
     for count, b in enumeratedBackgroundList:
         print(count, b)
     choiceBackground = input(f'What background will {name} have?: ')
+    choiceBackground = backgroundList[int(choiceBackground) -1]
 
     for count, a in enumeratedAlignmentList:
         print(count, a)
     choiceAlignment = input(f'What alignment will {name} be?: ')
+    choiceAlignment = alignmentList[int(choiceAlignment) -1]
 
     print("Now that we've gotten the basics taken care of let's move on to abilites")
     choiceRoll = input("""For starters what would you prefer to use to determine your stats? \n
@@ -73,28 +58,25 @@ def main():
         to an ability (strength, dexterity, constitution, intelligence, wisdom, and charisma). The rolling \n
         of the 4d6 aas well as taking the sum will be done for you and you will choose which ability stat \n
         to assign the value to. Let's get started.""")
+        
         for i in range(6):
-            roll + str(i) = statRoll(4, 6)
-            print(roll + str(i))
-            choiceAbility = input("What ability will you assign these points to?: ")
-            choice + str(i) = checkAbility(choiceAbility, roll+str(i))
-
-            
+            i = statRoll(4, 6)
+            print(f'You rolled a {i}')
+            statChoice = input('What ability will you want to assign this value to?')
+            statChoices[statChoice] = i
+            print(statChoices[statChoice])
     else:
         choiceRoll = 'Choose'
 
-
-    
-
-
-
-    # newCharacter = Character(name, choiceGender, choiceRace, choiceBackground, choiceAlignment, 20, 20, 20, 20, 20, 20)
-    # return newCharacter
-
-
-
-    
+    newCharacter = Character(name, choiceGender, choiceRace, choiceBackground, choiceAlignment, statChoices['str'], statChoices['dex'], statChoices['con'], statChoices['intel'], statChoices['wis'], statChoices['cha'])
+    return newCharacter
 
 newPlayer1 = main()
-roll1 = statRoll(4, 6)
-print(roll1)
+print(f'''Your character has been created! Their name is {newPlayer1.name} and they are a {newPlayer1.gender} {newPlayer1.race}.
+ They are a(n) {newPlayer1.background} and an alignment of {newPlayer1.alignment}. They have the following base stats:
+ Strength: {newPlayer1.str}
+ Dexterity: {newPlayer1.dex}
+ Constitution: {newPlayer1.con}
+ Intelligence: {newPlayer1.intel}
+ Wisdom: {newPlayer1.wis}
+ Charisma: {newPlayer1.char}''')
