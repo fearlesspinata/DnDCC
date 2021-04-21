@@ -15,15 +15,7 @@ class Character():
         self.wis = wis
         self.char = char
 
-    # Need a method to update attributes dynamically
-    def updateAttr(self, stat, value):
-        setattr(self, stat, value)
 
-    # A roll method
-
-            
-
-    # Inventory/starting items
 
 # DnD Character Process Outline
 # Choose a Race

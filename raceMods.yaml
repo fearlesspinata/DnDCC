@@ -1,0 +1,16 @@
+---
+races:
+   raceName: 'Dwarf'
+   bonus:
+     con: 2
+     wis: 1
+   turtle-doves: two
+#races:
+#  raceName: 'Dwarf'
+#    bonuses:
+#     str: 0
+#     dex: 0
+#     con: 2
+#     intel: 0
+#     wis: 0
+#     cha: 0

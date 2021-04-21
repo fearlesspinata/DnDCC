@@ -9,6 +9,7 @@ from charOptions import alignmentList
 from charOptions import alignment
 from character import Character
 import random
+import json
 
 def statRoll (dieNumber, dieSize):
         rolls = []
