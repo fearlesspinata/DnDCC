@@ -1,16 +1,11 @@
 ---
 races:
-   raceName: 'Dwarf'
-   bonus:
-     con: 2
-     wis: 1
-   turtle-doves: two
-#races:
-#  raceName: 'Dwarf'
-#    bonuses:
-#     str: 0
-#     dex: 0
-#     con: 2
-#     intel: 0
-#     wis: 0
-#     cha: 0
+    name:
+      Dwarf:
+        Bonus: {str: 0, dex: 0, con: 2, intel: 0, wis: 0, cha: 0}
+      Elf:
+        Bonus: {str: 0, dex: 2 , con: 0, intel: 0, wis: 0, cha: 0}
+      Halfling:
+        Bonus: {str: 0, dex: 2, con: 0, intel: 0, wis: 0, cha: 0}
+      Human:
+        Bonus: {str: 1, dex: 1, con: 1, intel: 1, wis: 1, cha: 1}

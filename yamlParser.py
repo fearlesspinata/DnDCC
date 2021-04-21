@@ -1,8 +1,9 @@
 import yaml
+import pprint
 
-with open('raceMods.yaml') as f:
+with open("C:\\Users\\vesna\\Programming\\DnDcc\\raceMods.yaml") as f:
     try:
         dict = yaml.load(f, Loader=yaml.FullLoader)
-        print(dict)
+        pprint.pprint(dict['races']['name']['Dwarf']['Bonus'])
     except yaml.YAMLError as e:
         print(e)

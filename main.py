@@ -8,8 +8,10 @@ from charOptions import background
 from charOptions import alignmentList
 from charOptions import alignment
 from character import Character
+import yaml
 import random
 import json
+import pprint
 
 def statRoll (dieNumber, dieSize):
         rolls = []
@@ -73,11 +75,20 @@ def main():
     return newCharacter
 
 newPlayer1 = main()
-print(f'''Your character has been created! Their name is {newPlayer1.name} and they are a {newPlayer1.gender} {newPlayer1.race}.
- They are a(n) {newPlayer1.background} and an alignment of {newPlayer1.alignment}. They have the following base stats:
- Strength: {newPlayer1.str}
- Dexterity: {newPlayer1.dex}
- Constitution: {newPlayer1.con}
- Intelligence: {newPlayer1.intel}
- Wisdom: {newPlayer1.wis}
- Charisma: {newPlayer1.char}''')
+
+# def addModifiers(character):
+    # take character.race value and store it in a variable
+    charRace = character.race
+    # opens a yaml file
+    with open("C:\\Users\\vesna\\Programming\\DnDcc\\raceMods.yaml") as f:
+        # store yaml file contents in a variable
+        abilityDict = yaml.load(f, Loader=yaml.FullLoader)
+        abilityDict = abilityDict['races']['name'][charRace]['Bonus']
+        # take bonus value which is a dictionary with its own key value pairs
+        for ability, value in abilityDict:
+            if value > 0:
+                character.
+
+
+        # check for values that are greater than 0
+        # add value to character.ability that matches key of value
