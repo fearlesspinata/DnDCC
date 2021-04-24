@@ -13,6 +13,20 @@ import random
 import json
 import pprint
 
+def addModifiers(character):
+    charRace = character.race
+    with open("C:\\Users\\vesna\\Programming\\DnDcc\\raceMods.yaml") as f:
+        abilityDict = yaml.load(f, Loader=yaml.FullLoader)
+        abilityDict = abilityDict['races']['name'][charRace]['Bonus']
+        character.str += abilityDict['str']
+        character.dex += abilityDict['dex']
+        character.con += abilityDict['con']
+        character.wis += abilityDict['wis']
+        character.intel += abilityDict['intel']
+        character.char += abilityDict['cha']
+    
+    return character
+
 def statRoll (dieNumber, dieSize):
         rolls = []
         for i in range(dieNumber):
@@ -75,20 +89,5 @@ def main():
     return newCharacter
 
 newPlayer1 = main()
-
-# def addModifiers(character):
-    # take character.race value and store it in a variable
-    charRace = character.race
-    # opens a yaml file
-    with open("C:\\Users\\vesna\\Programming\\DnDcc\\raceMods.yaml") as f:
-        # store yaml file contents in a variable
-        abilityDict = yaml.load(f, Loader=yaml.FullLoader)
-        abilityDict = abilityDict['races']['name'][charRace]['Bonus']
-        # take bonus value which is a dictionary with its own key value pairs
-        for ability, value in abilityDict:
-            if value > 0:
-                character.
-
-
-        # check for values that are greater than 0
-        # add value to character.ability that matches key of value
+addModifiers(newPlayer1)
+print(newPlayer1.con)
