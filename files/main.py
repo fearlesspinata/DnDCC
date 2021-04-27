@@ -12,10 +12,16 @@ import yaml
 import random
 import json
 import pprint
+import pickle
+
+def saveCharacter(character):
+    characterFile = open('character.obj', 'wb')
+    pickle.dump(character, characterFile)
+
 
 def addModifiers(character):
     charRace = character.race
-    with open("C:\\Users\\vesna\\Programming\\DnDcc\\raceMods.yaml") as f:
+    with open("raceMods.yaml") as f:
         abilityDict = yaml.load(f, Loader=yaml.FullLoader)
         abilityDict = abilityDict['races']['name'][charRace]['Bonus']
         character.str += abilityDict['str']
@@ -84,10 +90,16 @@ def main():
             print(statChoices[statChoice])
     else:
         choiceRoll = 'Choose'
+        # print ability name
+        # take user input for score
+        # will need to add in a check to ensure that the scores are within the limits
+            # store possible scores in a list and use a boolean to check if user input is valid
+        # store user input by assign the user input as the key value in our statChoices dictionary
 
     newCharacter = Character(name, choiceGender, choiceRace, choiceBackground, choiceAlignment, statChoices['str'], statChoices['dex'], statChoices['con'], statChoices['intel'], statChoices['wis'], statChoices['cha'])
     return newCharacter
 
 newPlayer1 = main()
 addModifiers(newPlayer1)
+saveCharacter(newPlayer1)
 print(newPlayer1.con)
